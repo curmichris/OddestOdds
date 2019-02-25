@@ -1,0 +1,53 @@
+﻿@model List<OddestOdds.Web.ViewModels.Admin.AdminOddsViewModel>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<p>
+    <a href="/Admin/Create" class="btn btn-default">Create New</a>
+</p>
+<table class="table" style="border: black; border-width: thin">
+    <thead>
+        <tr>
+            <td><b>Home Team Name</b></td>
+            <td><b>Away Team Name</b></td>
+            <td><b>Home Odd Value</b></td>
+            <td><b>Draw Odd Value</b></td>
+            <td><b>Away Odd Value</b></td>
+            <td></td>
+        </tr>
+    </thead>
+    @foreach (var m in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => m.HomeTeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => m.AwayTeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => m.OddValues.HomeOddValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => m.OddValues.DrawOddValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => m.OddValues.AwayOddValue)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Edit", "Update", new { id = m.Id, @class = "btn btn - default" })
+                    @Html.ActionLink("Delete", "Delete", new { id = m.Id, @class = "btn btn - default" })
+                </td>
+            </tr>
+            
+        </tbody>
+    }
+</table>
+<p>
+    <a href="/Admin/Populate">Populate Fields</a>
+</p>

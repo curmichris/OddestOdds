@@ -1,0 +1,55 @@
+﻿@model OddestOdds.Web.ViewModels.Admin.AdminOddsViewModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h4>Create Odds</h4>
+<hr />
+
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.HomeTeamName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HomeTeamName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HomeTeamName, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.AwayTeamName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AwayTeamName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AwayTeamName, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.OddValues.HomeOddValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OddValues.HomeOddValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OddValues.HomeOddValue, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.OddValues.DrawOddValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OddValues.DrawOddValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OddValues.DrawOddValue, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.OddValues.AwayOddValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OddValues.AwayOddValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OddValues.AwayOddValue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-default" />
+        <a href="/Admin/Index" class="btn btn-default">Back to List</a>
+    </div>
+}

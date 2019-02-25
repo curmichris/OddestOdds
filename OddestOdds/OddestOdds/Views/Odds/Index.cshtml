@@ -1,0 +1,21 @@
+﻿@model List<OddestOdds.Web.ViewModels.Punter.OddsViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<ul class="style1" id="allOdds">
+    @foreach (var odd in Model)
+    {
+        <li class="first">
+            <h3><em><img src="/images/img02.jpg" alt="" width="130" height="130" class="alignleft border" /></em>@odd.OddsName</h3>
+            <p>(1) @odd.HomeTeamName : @odd.OddValues.HomeOddValue</p>
+            <p>(X) Draw : @odd.OddValues.HomeOddValue</p>
+            <p>(2) @odd.AwayTeamName : @odd.OddValues.AwayOddValue</p>
+        </li>
+    }
+</ul>
+
+
+
+
