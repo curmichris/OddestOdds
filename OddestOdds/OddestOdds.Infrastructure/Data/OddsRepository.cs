@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OddestOdds.Core.Interfaces;
@@ -34,8 +32,7 @@ namespace OddestOdds.Infrastructure.Data
         {
             return await _dbContext.Set<T>().ToListAsync();
         }
-
-
+        
         public async Task<List<T>> ListAsync<T>(string[] includes) where T : BaseEntity
         {
             var list = _dbContext.Set<T>().AsQueryable();

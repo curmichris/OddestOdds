@@ -7,7 +7,6 @@
         public const string AdminUpdateView = "Update";
         public const string AdminDeleteView = "Delete";
 
-
         public const string ErrorPage = "Error";
 
         public const string HomeController = "Home";

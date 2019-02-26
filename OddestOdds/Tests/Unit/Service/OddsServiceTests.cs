@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Moq;
 using NSubstitute;
@@ -10,8 +9,6 @@ using OddestOdds.Core.Interfaces;
 using OddestOdds.Infrastructure.Entities;
 using OddestOdds.Service.DTOs;
 using OddestOdds.Service.Implementation;
-using OddestOdds.Web.Controllers;
-using OddestOdds.Web.Hubs;
 
 namespace Tests.Unit.Service
 {
